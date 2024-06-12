@@ -713,9 +713,8 @@ body > footer > div.footer-links > div:nth-child(1) > ul > li > a > img {
 
     .video_slider > img {
         width: 100%;
-        max-width: 55vw;
+        max-width: 75vw;
         height: auto;
-        margin-bottom: 2vh;
     }
 
     .video_slider > video {
@@ -728,7 +727,6 @@ body > footer > div.footer-links > div:nth-child(1) > ul > li > a > img {
     .styled-button {
         font-size: 2.3vh;
         border-radius: 2vh;
-        margin-top: 2vh;
     }
 
     .fixed-footer {
