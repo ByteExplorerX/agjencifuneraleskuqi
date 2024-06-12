@@ -74,11 +74,18 @@ h2 {
     width: 80%;
     max-width: 700px;
     border-radius: 10px;
+    position: relative;
 }
 
-.modal-content video {
-    width: 100%;
-    height: auto;
+.modal-content img, .modal-content video {
+    display: flex;
+    height: 80vh;
+    width: auto;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
 }
 
 .close {
@@ -96,6 +103,37 @@ h2 {
     color: #bbb;
     text-decoration: none;
     cursor: pointer;
+}
+
+.modal-content .prev,
+.modal-content .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 40px; /* Increase font size for better visibility */
+    transition: 0.6s ease;
+    border-radius: 3px;
+    user-select: none;
+    background-color: rgba(0, 0, 0, 0.5); /* Add background for contrast */
+    border: 2px solid white; /* Add border for better visibility */
+}
+
+.modal-content .prev {
+    left: -60px; /* Position the control 10px away from the image */
+}
+
+.modal-content .next {
+    right: -60px; /* Position the control 10px away from the image */
+}
+
+.modal-content .prev:hover,
+.modal-content .next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
 }
 
 /* Media Queries for Responsiveness */
