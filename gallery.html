@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
+    <link rel="manifest" href="assets/site.webmanifest">
+    <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+    <title>Rreth Nesh - Agjenci Funerale Skuqi</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap');
+
+        body {
+            font-family: 'Rajdhani', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f8f3;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            flex-direction: column;
+            width: 100vw;
+            box-sizing: border-box;
+        }
+        .title-container {
+            width: 100%;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-sizing: border-box;
+        }
+        .title {
+            font-size: 48px;
+            font-weight: bold;
+            color: #2F4F4F;
+            margin-left: 50vh;
+            margin-right: auto;
+        }
+        .container {
+            display: flex;
+            width: 100%;
+            margin: 0;
+            justify-content: space-between;
+            box-sizing: border-box;
+        }
+        .left-column, .right-column {
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .left-column {
+            flex: 3;
+            background-color: white;
+        }
+        .right-column {
+            flex: 2;
+            background-color: #2F4F4F;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            margin-top: -15vh; /* Adjusted to align with the left column */
+        }
+        .left-column .image {
+            width: 40%;
+            height: auto;
+            margin: 0 auto 20px auto; /* Center the image */
+            display: block;
+            border-radius: 20px;
+        }
+        .right-column .image {
+            width: 50%;
+            height: auto;
+            margin: 10px auto; /* Center the image */
+            display: block;
+            border-radius: 20px;
+        }
+        .text-content {
+            font-size: 20px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 14px;
+            color: #37474f;
+        }
+        .right-column .text-content {
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+        .section-title {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: white;
+        }
+        .section-title {
+            text-align: center;
+            font-size: 35px;        
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .title {
+                font-size: 36px;
+                margin-left: 0;
+                margin-right: 0;
+                text-align: center;
+            }
+            .container {
+                flex-direction: column;
+                align-items: center;
+            }
+            .left-column, .right-column {
+                flex: 1 1 100%;
+                margin: 10px 0;
+                padding: 10px;
+            }
+            .right-column {
+                margin-top: 0; /* Remove negative margin on small screens */
+            }
+            .left-column .image, .right-column .image {
+                width: 80%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .title {
+                font-size: 28px;
+            }
+            .text-content {
+                font-size: 16px;
+            }
+            .section-title {
+                font-size: 20px;
+            }
+            .left-column .image, .right-column .image {
+                width: 90%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="title-container">
+        <div class="title">Rreth Nesh</div>
+    </div>
+    <div class="container">
+        <div class="left-column">
+            <img src="assets/275738214_526540748891555_3245438183270901468_n.jpg" alt="Building" class="image">
+            <div class="text-content">
+                Agjencia Funerale Skuqi ofron sherbime funerale brenda dhe jashte vendit. Me nje eksperience mbi 20 vjecare ne ju gjendemi prane 24 ore ne cdo dite te javes, perfshire dhe ditet e pushimeve duke garantuar nje sherbim cilesor per klientet tane. Percjellja per ne banesen e fundit ne menyren me te denje duke  plotesuar te gjitha kushtet maksimale eshte prioriteti yne! Ne kujdesemi ne cdo detaj per te lehtesuar dhimbjen ne diten tuaj me te veshtire.
+            </div>
+            <div class="footer">
+                Agjenci Funerale Skuqi
+            </div>
+        </div>
+        <div class="right-column">
+            <div class="section-title">Profesionalizem</div>
+            <img src="assets/436624951_501723212212475_8093271349936315828_n.jpg" alt="Office" class="image">
+            <div class="text-content">
+                <div class="section-title">Besueshmeri </div>
+            </div>
+            <img src="assets/IMG_2131.webp" alt="Laptop" class="image">
+            <div class="text-content">
+                <div class="section-title">Seriozitet</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
