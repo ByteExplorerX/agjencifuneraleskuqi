@@ -146,13 +146,6 @@ h2 {
 }
 
 /* Medium screens */
-@media (min-width: 768px) and (max-width: 1199px) {
-    .photo-grid, .video-grid {
-        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    }
-}
-
-/* Small screens */
 @media (max-width: 767px) {
     .intro {
         padding: 15px 15px;
@@ -174,7 +167,20 @@ h2 {
     }
 
     .modal-content {
-        width: 90%;
-        max-width: 90%;
+        width: 60%;
+        max-width: 60%;
+    }
+
+    .modal-content img, .modal-content video {
+        width: 100%;
+        height: auto;
+        max-height: 80vh;
+    }
+
+    .modal-content .prev,
+    .modal-content .next {
+        font-size: 30px; /* Slightly smaller for mobile */
+        padding: 10px; /* Smaller padding for mobile */
+        margin-top: -16px; /* Adjust to be centered */
     }
 }
