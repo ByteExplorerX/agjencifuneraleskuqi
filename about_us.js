@@ -1,46 +1,51 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const modal = document.getElementById('modal');
-    const modalImg = document.getElementById('modal-image');
-    const modalVideo = document.getElementById('modal-video');
-    const close = document.querySelector('.close');
-    const prev = document.querySelector('.prev');
-    const next = document.querySelector('.next');
-    const galleryItems = document.querySelectorAll('.gallery-item');
+document.addEventListener("DOMContentLoaded", () => {
+    const modal = document.getElementById("modal");
+    const modalImage = document.getElementById("modal-image");
+    const modalVideo = document.getElementById("modal-video");
+    const closeBtn = document.querySelector(".close");
+    const prevBtn = document.querySelector(".prev");
+    const nextBtn = document.querySelector(".next");
     let currentIndex = 0;
+    const galleryItems = document.querySelectorAll(".gallery-item");
 
     galleryItems.forEach((item, index) => {
-        item.addEventListener('click', () => {
+        item.addEventListener("click", () => {
             currentIndex = index;
             showModal(item);
         });
     });
 
-    close.addEventListener('click', () => {
-        modal.style.display = 'none';
-        modalImg.style.display = 'none';
-        modalVideo.style.display = 'none';
+    closeBtn.addEventListener("click", () => {
+        modal.style.display = "none";
+        modalImage.style.display = "none";
+        modalVideo.style.display = "none";
+        modalVideo.controls = false; // Hide controls when modal is closed
+        modalVideo.pause(); // Pause video when modal is closed
     });
 
-    prev.addEventListener('click', () => {
-        currentIndex = (currentIndex === 0) ? galleryItems.length - 1 : currentIndex - 1;
+    prevBtn.addEventListener("click", () => {
+        currentIndex = (currentIndex - 1 + galleryItems.length) % galleryItems.length;
         showModal(galleryItems[currentIndex]);
     });
 
-    next.addEventListener('click', () => {
-        currentIndex = (currentIndex === galleryItems.length - 1) ? 0 : currentIndex + 1;
+    nextBtn.addEventListener("click", () => {
+        currentIndex = (currentIndex + 1) % galleryItems.length;
         showModal(galleryItems[currentIndex]);
     });
 
     function showModal(item) {
-        modal.style.display = 'block';
-        if (item.tagName === 'IMG') {
-            modalImg.style.display = 'block';
-            modalVideo.style.display = 'none';
-            modalImg.src = item.src;
-        } else if (item.tagName === 'VIDEO') {
-            modalImg.style.display = 'none';
-            modalVideo.style.display = 'block';
-            modalVideo.src = item.querySelector('source').src;
+        const isVideo = item.tagName === "VIDEO";
+        modal.style.display = "block";
+        if (isVideo) {
+            modalVideo.style.display = "block";
+            modalImage.style.display = "none";
+            modalVideo.src = item.querySelector("source").src;
+            modalVideo.controls = true; // Show controls when video is played
+            modalVideo.play(); // Automatically play video when modal opens
+        } else {
+            modalImage.style.display = "block";
+            modalVideo.style.display = "none";
+            modalImage.src = item.src;
         }
     }
 });
