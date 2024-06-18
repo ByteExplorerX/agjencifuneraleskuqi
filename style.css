@@ -587,6 +587,38 @@ body > footer > div.footer-links > div:nth-child(1) > ul > li > a > img {
 
 }
 
+@keyframes downAndScale {
+    0% {
+        transform: translateY(0) scale(1);
+    }
+    50% {
+        transform: translateY(15px) scale(1.1); /* Moves down and scales up slightly */
+    }
+    80% {
+        transform: translateY(0) scale(1.3); /* Returns to original position and scales up */
+    }
+}
+
+/* Targeting the second paragraph within the .footer-bottom class */
+.footer-bottom > p:nth-child(2) {
+    font-family: "Jost", sans-serif; /* Applying the Jost font family to the paragraph */
+}
+
+/* Styling the anchor tags within the second paragraph of .footer-bottom */
+.footer-bottom > p:nth-child(2) > a {
+    color: #f5b400; /* Setting the link color */
+    text-decoration: none; /* Removing underline from the link */
+    transition: color .8s ease-in-out; /* Adding smooth transition for color */
+    display: inline-block; /* Ensuring the element is inline-block for transform to work */
+}
+
+/* Styling the anchor tags within the second paragraph of .footer-bottom on hover */
+.footer-bottom > p:nth-child(2) > a:hover {
+    color: #d48f00; /* Changing link color on hover */
+    text-decoration: underline; /* Adding underline on hover */
+    animation: downAndScale 1.2s ease-in-out; /* Applying the custom animation */
+}
+
 
 @media (max-width: 767px) {
     main {
